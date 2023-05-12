@@ -1,19 +1,20 @@
 import React from "react";
 import PropTypes from 'prop-types';
+import { ButtonsList } from './FeedbackOptions.styled';
 
 const FeedbackOptions = ({handleIncrementGood, handleIncrementNeutral, handleIncrementBad}) => {
 return (
-    <ul>
+    <ButtonsList>
         <li>
-            <button type="button" onClick={handleIncrementGood}>Good</button>
+            <button className="good" type="button" onClick={handleIncrementGood}>Good</button>
         </li>
         <li>
-            <button type="button" onClick={handleIncrementNeutral}>Neutral</button>
+            <button className="neutral" type="button" onClick={handleIncrementNeutral}>Neutral</button>
         </li>
         <li>
-            <button type="button" onClick={handleIncrementBad}>Bad</button>
+            <button className="bad" type="button" onClick={handleIncrementBad}>Bad</button>
         </li>    
-    </ul>
+    </ButtonsList>
 )}
 
 FeedbackOptions.propTypes = {

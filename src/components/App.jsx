@@ -3,6 +3,7 @@ import Statistics from './Statistics/Statistics';
 import FeedbackOptions from './FeedbackOptions/FeedbackOptions';
 import Notification from './Notification/Notification';
 import Section from './Section/Section'
+import { } from 'App.styled';
 
 export class App extends React.Component {
   state = {good: 0, neutral: 0, bad: 0}
@@ -41,10 +42,9 @@ export class App extends React.Component {
     <div
       style={{
         height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
+        display: 'block',
+        textAlign: 'center',
+        fontSize: 28,
         color: '#010101'
       }}
     >
