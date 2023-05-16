@@ -8,7 +8,7 @@ return (
     <ButtonsList>
         {options.map((data) => (
         <li key={nanoid()}>
-            <button className={data} type="button" onClick={() => onLeaveFeedBack(data)}>Good</button>
+            <button className={data} type="button" onClick={() => onLeaveFeedBack(data)}>{data}</button>
         </li>))} 
     </ButtonsList>
 )}
