@@ -7,21 +7,9 @@ import Section from './Section/Section'
 export class App extends React.Component {
   state = {good: 0, neutral: 0, bad: 0}
 
-  handleIncrementGood = () => {
-    this.setState(prevState => ({
-        good: prevState.good + 1,        
-    }));
-  };
-
-  handleIncrementNeutral = () => {
+  onLeaveFeedBack = (data) => {
       this.setState(prevState => ({
-          neutral: prevState.neutral + 1,        
-      }));
-  };
-
-  handleIncrementBad = () => {
-      this.setState(prevState => ({
-          bad: prevState.bad + 1,        
+          [data]: prevState[data] + 1,        
       }));
   };
 
@@ -48,11 +36,7 @@ export class App extends React.Component {
       }}
     >
       <Section title="Please leave feedback">
-        <FeedbackOptions 
-        handleIncrementGood={this.handleIncrementGood}
-        handleIncrementNeutral={this.handleIncrementNeutral}
-        handleIncrementBad={this.handleIncrementBad}>   
-        </FeedbackOptions>
+        <FeedbackOptions options={['good', 'neutral', 'bad']} onLeaveFeedBack={this.onLeaveFeedBack}/>   
       </Section>
       { good + neutral + bad > 0 ?
       <Section title="Statistics">
@@ -61,10 +45,9 @@ export class App extends React.Component {
         neutral={neutral} 
         bad={bad} 
         total={this.countTotalFeedback()} 
-        positivePercentage={this.countPositiveFeedback()}>
-        </Statistics>
+        positivePercentage={this.countPositiveFeedback()}/>
       </Section> : 
-      <Notification message="There is not Feadback"></Notification> }
+      <Notification message="There is not Feadback"/>}
     </div>
   )};
 };
