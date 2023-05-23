@@ -36,7 +36,7 @@ export class App extends React.Component {
       }}
     >
       <Section title="Please leave feedback">
-        <FeedbackOptions options={['good', 'neutral', 'bad']} onLeaveFeedBack={this.onLeaveFeedBack}/>   
+        <FeedbackOptions options={Object.keys(this.state)} onLeaveFeedBack={this.onLeaveFeedBack}/>   
       </Section>
       { good + neutral + bad > 0 ?
       <Section title="Statistics">
